@@ -16,7 +16,7 @@ function Edit() {
 
   const base_url = "http://localhost:8000";
 
-  const fetchContact = async (id) => {
+  const fetchContact = async(id) => {
     const result = await axios.get(`${base_url}/get-a-contact/${id}`);
     console.log(result.data.contacts);
     setId(result.data.contacts.id);
@@ -32,7 +32,7 @@ function Edit() {
 
   const location = useNavigate();
   //update an employee function call
-  const updateContact = async (e) => {
+  const updateContact = async(e) =>{
     e.preventDefault();
     const body = {
       id: pid,
@@ -45,7 +45,7 @@ function Edit() {
     console.log(result);
     alert(result.data.message);
     location("/view"); //back to admin page
-  };
+  }
 
   return (
     <div>
@@ -57,7 +57,7 @@ function Edit() {
           <MDBInput
             label="Id"
             id="formControlLg"
-            onChange={(e) => setId(e.target.value)}
+            onChange={(e) => setId(e.target.value)} value={pid}
             type="text"
             size="lg"
           />
@@ -65,7 +65,7 @@ function Edit() {
           <MDBInput
             label="Name"
             id="formControlLg"
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setName(e.target.value)} value={pname}
             type="text"
             size="lg"
           />
@@ -73,7 +73,7 @@ function Edit() {
           <MDBInput
             label="Address"
             id="formControlLg"
-            onChange={(e) => setAddress(e.target.value)}
+            onChange={(e) => setAddress(e.target.value)} value={paddress}
             type="text"
             size="lg"
           />
@@ -81,7 +81,7 @@ function Edit() {
           <MDBInput
             label="Phone"
             id="formControlLg"
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={(e) => setPhone(e.target.value)} value={pphone}
             type="text"
             size="lg"
           />
@@ -89,7 +89,7 @@ function Edit() {
           <MDBInput
             label="Email"
             id="formControlLg"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)} value={pemail}
             type="text"
             size="lg"
           />
